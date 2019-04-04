@@ -8,13 +8,17 @@ const MAX_FALL_SPEED = 30
 const H_LOOK_SENS = 0.5
 const V_LOOK_SENS = 0.5
 
+const RUN_ANIM = "Run"
+const IDLE_ANIM = "Idle"
+const JUMP_ANIM = "Jump"
+
 onready var cam = $CamBase
 onready var anim = $Graphics/AnimationPlayer
 
 var y_velo = 0
 
 func _ready():
-	anim.get_animation("walk").set_loop(true)
+	anim.get_animation(RUN_ANIM).set_loop(true)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _input(event):
@@ -42,7 +46,7 @@ func _physics_process(delta):
 	var grounded = is_on_floor()
 	y_velo -= GRAVITY
 	var just_jumped = false
-	if grounded and Input.is_action_just_pressed("jump"):
+	if grounded and Input.is_action_just_pressed(JUMP_ANIM):
 		just_jumped = true
 		y_velo = JUMP_FORCE
 	if grounded and y_velo <= 0:
@@ -51,12 +55,12 @@ func _physics_process(delta):
 		y_velo = -MAX_FALL_SPEED
 	
 	if just_jumped:
-		play_anim("jump")
+		play_anim(IDLE_ANIM)
 	elif grounded:
 		if move_vec.x == 0 and move_vec.z == 0:
-			play_anim("idle")
+			play_anim(IDLE_ANIM)
 		else:
-			play_anim("walk")
+			play_anim(RUN_ANIM)
 func play_anim(name):
 	if anim.current_animation == name:
 		return

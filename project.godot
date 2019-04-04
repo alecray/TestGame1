@@ -19,6 +19,11 @@ config/name="TestGame1"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=800
+window/vsync/use_vsync=false
+
 [input]
 
 move_fowards={

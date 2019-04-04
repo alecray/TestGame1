@@ -1,0 +1,17 @@
+Genre(s): RPG, MMO, hack-n-slash, looter, dungeon crawler
+
+Title: _________________
+
+Art Style: low poly 
+
+Theme:
+
+Who is this game for: 
+People who enjoy grinding games such as WoW, Runescape, Path of Exile, and like to have a character in a persistent world. This game is for someone who likes to have a separate life inside a game where there is a sense of progression and building up/strengthening your character. 
+
+Game design:
+Initially there will be developer designed maps, but I hope to expand this to procedural map generation using 'chunks' of pre-created land areas or rooms, similar to Diablo3 map generation.
+
+
+Premise:
+You start out in a 
