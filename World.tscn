@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Env1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NPC.gd" type="Script" id=4]
 
 [node name="World" type="Spatial"]
 
@@ -14,4 +16,8 @@ shadow_bias = -1.58
 transform = Transform( -0.784509, 0, -0.620117, 0, 1, 0, 0.620117, 0, -0.784509, 8.72551, 0, 9.39448 )
 
 [node name="Scene Root" parent="." instance=ExtResource( 2 )]
+
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -17 )
+script = ExtResource( 4 )
 

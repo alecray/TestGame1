@@ -10,7 +10,6 @@ const V_LOOK_SENS = 0.5
 
 const RUN_ANIM = "Run"
 const IDLE_ANIM = "Idle"
-const JUMP_ANIM = "Jump"
 
 onready var cam = $CamBase
 onready var anim = $Graphics/AnimationPlayer
@@ -43,10 +42,11 @@ func _physics_process(delta):
 	move_vec.y = y_velo
 	move_and_slide(move_vec, Vector3(0, 1, 0))
 	
+	# ----------------- JUMPING ---------------------------
 	var grounded = is_on_floor()
 	y_velo -= GRAVITY
 	var just_jumped = false
-	if grounded and Input.is_action_just_pressed(JUMP_ANIM):
+	if grounded and Input.is_action_just_pressed("jump"):
 		just_jumped = true
 		y_velo = JUMP_FORCE
 	if grounded and y_velo <= 0:
@@ -61,6 +61,9 @@ func _physics_process(delta):
 			play_anim(IDLE_ANIM)
 		else:
 			play_anim(RUN_ANIM)
+	# -----------------------------------------------------
+	
+	# ----------------- INTERACT --------------------------
 func play_anim(name):
 	if anim.current_animation == name:
 		return
