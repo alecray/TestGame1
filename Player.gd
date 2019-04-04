@@ -5,8 +5,8 @@ const JUMP_FORCE = 30
 const GRAVITY = 0.98
 const MAX_FALL_SPEED = 30
 
-const H_LOOK_SENS = 1.0
-const V_LOOK_SENS = 1.0
+const H_LOOK_SENS = 0.5
+const V_LOOK_SENS = 0.5
 
 onready var cam = $CamBase
 onready var anim = $Graphics/AnimationPlayer
